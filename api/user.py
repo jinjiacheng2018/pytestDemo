@@ -32,3 +32,8 @@ class User(RestClient):
 
 
 user = User(api_root_url)
+
+if __name__ == '__main__':
+    users = user.list_all_users()
+    for user in users:
+        print(user)
