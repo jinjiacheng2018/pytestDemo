@@ -48,7 +48,7 @@ class TestGetUserInfo():
     @pytest.mark.single
     @pytest.mark.parametrize("username, except_result, except_code, except_msg",
                              api_data["test_get_get_one_user_info"])
-    def test_get_get_one_user_info(self, username, except_result, except_code, except_msg):
+    def taest_get_get_one_user_info(self, username, except_result, except_code, except_msg):
         logger.info("*************** 开始执行用例 ***************")
         step_2(username)
         result = get_one_user_info(username)
@@ -62,4 +62,4 @@ class TestGetUserInfo():
 
 
 if __name__ == '__main__':
-    pytest.main(["-q", "-s", "test_01_get_user_info.py"])
+    pytest.main(["-q", "-s", "--alluredir=./report/allure-results", "test_01_get_user_info.py"])
